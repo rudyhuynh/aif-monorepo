@@ -1,0 +1,21 @@
+{
+  "name": "aif-monorepo",
+  "version": "1.0.0",
+  "description": "Apra Image Finder Monorepo",
+  "scripts": {
+    "start-server": "cd aif-server && npm start",
+    "start-web": "cd aif-web && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "rudyhuynh",
+  "license": "UNLICENSE",
+  "workspaces": [
+    "aif-web",
+    "aif-server",
+    "aif-packages/*"
+  ],
+  "dependencies": {
+    "react-router-dom": "^6.14.1"
+  }
+}
