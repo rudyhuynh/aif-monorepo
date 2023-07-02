@@ -6,7 +6,10 @@
     "start-server": "cd aif-server && npm start",
     "start-web": "cd aif-web && npm run dev",
     "test-web": "cd aif-web && npm run test",
-    "build-server": "cd aif-server && tsc"
+    "build-all": "(cd aif-web && npm run build) && (cd aif-server && npm run build) && npm run copy",
+    "clean": "rm -rf aif-web/dist && rm -rf aif-server/dist",
+    "copy": "cp -R aif-web/dist aif-server/dist/public",
+    "start-prod": "NODE_ENV=production node aif-server/dist/main.js 3001"
   },
   "keywords": [],
   "author": "rudyhuynh",

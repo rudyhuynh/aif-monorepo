@@ -1,1 +1,2 @@
-export const ENDPOINT = "http://localhost:3001";
+export const ENDPOINT =
+  process.env.NODE_ENV === "development" ? "http://localhost:3001" : "";

@@ -11,6 +11,10 @@ const app: Application = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(__dirname + "/public"));
+}
+
 async function main() {
   initGraphQLClient();
 
