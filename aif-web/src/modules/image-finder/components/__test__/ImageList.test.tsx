@@ -14,7 +14,7 @@ jest.mock("../../../../services/PhotoService", () => {
 });
 
 describe("ImageList", () => {
-  test("loads items from photos API AND click on ID", async () => {
+  test("load items AND click on ID", async () => {
     // render
     render(
       <MockApp>
