@@ -6,9 +6,14 @@ import { SearchIcon } from "@aif-packages/icons";
 type SearchProps = {
   initialValue: string;
   onSearch: (value: string) => void;
+  disabled: boolean;
 };
 
-export const Search = ({ initialValue = "", onSearch }: SearchProps) => {
+export const Search = ({
+  initialValue = "",
+  onSearch,
+  disabled,
+}: SearchProps) => {
   const [value, setValue] = useState(initialValue);
 
   const onSubmit: FormEventHandler<HTMLFormElement> = (e) => {
@@ -23,6 +28,7 @@ export const Search = ({ initialValue = "", onSearch }: SearchProps) => {
   return (
     <form onSubmit={onSubmit} className="input-group mb-3">
       <TextInput
+        disabled={disabled}
         value={value}
         onChange={onChangeText}
         placeholder="Search keyword on Title"
@@ -32,6 +38,7 @@ export const Search = ({ initialValue = "", onSearch }: SearchProps) => {
         type="submit"
         className="btn-outline-secondary"
         content={<SearchIcon />}
+        disabled={disabled}
       />
     </form>
   );

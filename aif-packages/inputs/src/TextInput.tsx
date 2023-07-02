@@ -5,6 +5,7 @@ type TextInputProps = {
   onChange?: ChangeEventHandler<HTMLInputElement> | undefined;
   placeholder?: string | undefined;
   type?: HTMLInputTypeAttribute | undefined;
+  disabled: boolean;
 };
 
 export const TextInput = ({
@@ -12,6 +13,7 @@ export const TextInput = ({
   value,
   onChange,
   placeholder,
+  disabled,
 }: TextInputProps) => {
   return (
     <input
@@ -20,6 +22,7 @@ export const TextInput = ({
       placeholder={placeholder}
       value={value}
       onChange={onChange}
+      disabled={disabled}
     ></input>
   );
 };

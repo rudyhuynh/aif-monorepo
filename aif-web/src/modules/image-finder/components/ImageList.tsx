@@ -110,7 +110,12 @@ export const ImageList = () => {
   return (
     <Container className="pt-3 d-flex flex-column h-100">
       <div>
-        <Search key={q} initialValue={q} onSearch={onSearch} />
+        <Search
+          key={q}
+          initialValue={q}
+          onSearch={onSearch}
+          disabled={isLoading}
+        />
       </div>
       <div className="flex-fill overflow-auto border-top border-bottom relative">
         {isLoading && <Loader />}
@@ -133,6 +138,7 @@ export const ImageList = () => {
           currentPage={page}
           totalPages={totalPages}
           onChangePage={onChangePage}
+          disabled={isLoading}
         />
       </div>
 

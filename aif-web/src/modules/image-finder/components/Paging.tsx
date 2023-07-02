@@ -5,12 +5,14 @@ type PagingPropsType = {
   currentPage: number;
   totalPages: number;
   onChangePage: (page: number) => void;
+  disabled: boolean;
 };
 
 export const Paging = ({
   currentPage,
   totalPages,
   onChangePage,
+  disabled,
 }: PagingPropsType) => {
   const [pageInput, setPageInput] = useState(String(currentPage));
   const [error, setError] = useState(false);
@@ -26,8 +28,8 @@ export const Paging = ({
     }
   };
 
-  const disabledPrev = currentPage <= 1;
-  const disabledNextPage = currentPage >= totalPages;
+  const disabledPrev = currentPage <= 1 || disabled;
+  const disabledNextPage = currentPage >= totalPages || disabled;
 
   const prevPage = () => {
     onChangePage(currentPage - 1);
@@ -57,6 +59,7 @@ export const Paging = ({
               }
               value={pageInput}
               onChange={(e) => setPageInput(e.target.value)}
+              disabled={disabled}
             />{" "}
             of {totalPages}
           </form>
