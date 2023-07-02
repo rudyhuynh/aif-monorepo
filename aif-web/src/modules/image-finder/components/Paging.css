@@ -12,6 +12,12 @@
   background-image: unset !important;
   border-radius: 0;
   display: inline;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.input-container input.form-control.is-invalid {
+  padding-right: 2px;
 }
 
 .page-link {

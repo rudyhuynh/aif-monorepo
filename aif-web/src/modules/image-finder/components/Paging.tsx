@@ -20,7 +20,12 @@ export const Paging = ({
   const onChangePageInput: ChangeEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     const pageInputInt = parseInt(pageInput);
-    if (String(pageInputInt) === pageInput && pageInputInt > 0) {
+    const isValidPage =
+      String(pageInputInt) === pageInput &&
+      pageInputInt > 0 &&
+      pageInputInt >= 1 &&
+      pageInputInt <= totalPages;
+    if (isValidPage) {
       onChangePage(pageInputInt);
       setError(false);
     } else {
