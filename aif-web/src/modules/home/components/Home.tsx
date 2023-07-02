@@ -1,25 +1,20 @@
+import { Container } from "@aif-packages/layout";
+import { useNavigate } from "react-router-dom";
+
 export const Home = () => {
+  const navigate = useNavigate();
+
+  const start = () => {
+    navigate("/image-finder");
+  };
   return (
-    <div>
+    <Container className="h-100 d-flex flex-column justify-content-center align-items-center">
+      <div>This is a placeholder for Home Page.</div>
       <div>
-        <input />
+        <button className="btn btn-primary" onClick={start}>
+          Click here to get start
+        </button>
       </div>
-      <div>
-        <table>
-          <thead>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Thumbnail</th>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Ttttt</td>
-              <td>image here</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    </Container>
   );
 };

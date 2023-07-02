@@ -1,3 +1,8 @@
+/**
+ * Provide wrapper of the original Fetch API that handle default headers,
+ * parse JSON response, adding endpoint to the URL and support type parameter.
+ */
+
 import { flow } from "lodash-es";
 import { ENDPOINT } from "../constants";
 

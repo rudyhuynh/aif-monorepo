@@ -1,0 +1,19 @@
+.paging {
+  padding-top: 10px;
+}
+.input-container {
+  margin-left: 4px;
+  margin-right: 6px;
+}
+
+.input-container input {
+  width: 60px;
+  text-align: center;
+  background-image: unset !important;
+  border-radius: 0;
+  display: inline;
+}
+
+.page-link {
+  cursor: pointer;
+}

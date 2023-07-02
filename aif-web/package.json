@@ -10,10 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@aif-packages/button": "*",
+    "@aif-packages/icons": "*",
+    "@aif-packages/inputs": "*",
+    "@aif-packages/layout": "*",
+    "@aif-packages/modal": "*",
+    "@aif-packages/simple-table": "*",
     "@aif-packages/typedefs": "*",
     "@tanstack/react-query": "^4.29.19",
     "@types/lodash-es": "^4.17.7",
     "lodash-es": "^4.17.21",
+    "qs": "^6.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
