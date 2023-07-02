@@ -1,6 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
-import { fetchPhotos } from "../../../services/PhotoService";
-import { GetPhotosResult } from "@aif-packages/typedefs";
 import { SimpleTable } from "@aif-packages/simple-table";
 import { Search } from "./Search";
 import { Paging } from "./Paging";
@@ -13,11 +10,7 @@ import { useMemo, useState } from "react";
 import { IDCell } from "./cell/IDCell";
 import { ImageCell } from "./cell/ImageCell";
 import { ImageModal } from "./ImageModal";
-
-const initialPhotos: GetPhotosResult = {
-  data: [],
-  totalPages: 0,
-};
+import { usePhotos } from "../hook/usePhotos";
 
 const columnDefs: ImageColumnDefs = [
   {
@@ -69,16 +62,10 @@ export const ImageList = () => {
   const q = searchParams.get("q") || "";
   const page = parseInt(searchParams.get("page") as string) || 1;
 
-  const { data, isInitialLoading, isFetching, isSuccess, error } = useQuery({
-    queryFn: () => fetchPhotos({ q, page }),
-    queryKey: ["photos", q, page],
-    initialData: initialPhotos,
+  const { photos, totalPages, errorMessage, isLoading, isSuccess } = usePhotos({
+    q,
+    page,
   });
-
-  const photos = data.data;
-  const totalPages = data.totalPages;
-  const errorMessage = (error as Error)?.message;
-  const isLoading = isInitialLoading || isFetching;
 
   const [showImageUrl, setShowImageUrl] = useState("");
 

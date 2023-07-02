@@ -1,11 +1,7 @@
 import qs from "qs";
 import { GetPhotosResult } from "@aif-packages/typedefs";
-import { fetch } from "../utils/fetch";
-
-type FetchPhotosParams = {
-  q: string;
-  page: number;
-};
+import { fetch } from "../../../utils/fetch";
+import { FetchPhotosParams } from "../typedefs";
 
 export async function fetchPhotos({
   q,

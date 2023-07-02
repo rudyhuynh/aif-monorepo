@@ -1,5 +1,5 @@
 /**
- * Provide wrapper of the original Fetch API that handle default headers,
+ * Provide wrappers (higher-order functions) of the original Fetch API that handle default headers,
  * parse JSON response, adding endpoint to the URL and support type parameter.
  */
 

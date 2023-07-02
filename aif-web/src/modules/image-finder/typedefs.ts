@@ -6,3 +6,8 @@ export type ImageTableMeta = {
 };
 
 export type ImageColumnDefs = ColumnDefs<PhotoDTO, ImageTableMeta>;
+
+export type FetchPhotosParams = {
+  q: string;
+  page: number;
+};
