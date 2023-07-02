@@ -33,7 +33,7 @@ export const SimpleTable = <T extends Object, TA = undefined>({
           })}
         </tr>
       </thead>
-      <tbody>
+      <tbody data-testid="tbody">
         {data.map((item, i) => {
           return (
             <tr key={i}>

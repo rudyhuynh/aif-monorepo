@@ -5,7 +5,7 @@
   "scripts": {
     "start-server": "cd aif-server && npm start",
     "start-web": "cd aif-web && npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-web": "cd aif-web && npm run test"
   },
   "keywords": [],
   "author": "rudyhuynh",

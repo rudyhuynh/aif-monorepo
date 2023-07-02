@@ -18,7 +18,11 @@ export const ImageModal = ({ onClose, imageUrl }: ImageModalPropsType) => {
       content={
         <div className="image-modal overflow-auto relative">
           {isLoading && <Loader />}
-          <img src={imageUrl} onLoad={() => setIsLoading(false)} />
+          <img
+            data-testid="full-image"
+            src={imageUrl}
+            onLoad={() => setIsLoading(false)}
+          />
         </div>
       }
     />

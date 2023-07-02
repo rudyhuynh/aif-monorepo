@@ -11,9 +11,10 @@ export async function fetchPhotos({
   q,
   page,
 }: FetchPhotosParams): Promise<GetPhotosResult> {
-  const [data, status] = await fetch<GetPhotosResult>(
-    "/api/photos?" + qs.stringify({ q, page })
-  );
+  const url = "/api/photos?" + qs.stringify({ q, page });
+  console.log("url", url);
+  console.log("\t fetch", fetch, window.fetch);
+  const [data, status] = await fetch<GetPhotosResult>(url);
   if (status === 200) {
     return data;
   } else {

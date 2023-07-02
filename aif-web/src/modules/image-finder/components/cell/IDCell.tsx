@@ -5,7 +5,11 @@ type IDCellPropType = {
 
 export const IDCell = ({ id, onClick }: IDCellPropType) => {
   return (
-    <span className="cursor-pointer underline" onClick={onClick}>
+    <span
+      data-testid={`IDCell-${id}`}
+      className="cursor-pointer underline"
+      onClick={onClick}
+    >
       {id}
     </span>
   );

@@ -86,7 +86,17 @@ Each package can be created manually or using command line:
 npm init --workspace aif-packages/package-name
 ```
 
-## Test Cases
+## Tests
+
+### Unit test
+
+To run unit test:
+
+```
+npm run test-web
+```
+
+![](docs/unit-test.png?raw=true)
 
 ### Mobile
 
